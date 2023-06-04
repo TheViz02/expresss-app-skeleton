@@ -2,24 +2,32 @@
 
 ## expresss-app-skeleton
 
- Express app skeleton for fast express backend creation, with support of PM2
+- Express app skeleton for fast [express](https://expressjs.com/en/starter/installing.html) backend creation, with support of [PM2](https://pm2.keymetrics.io/docs/usage/quick-start/).
+- This application creates scaffolding for the Express Applicaiton with authentication, Model, Controller, services, & database access using [Prisma](https://www.prisma.io/docs).
+- This Application supports MySQL by default, but you can configure it with various database tools like Mongo DB, PostgreSQL, or various database tools available in [Prisma](https://www.prisma.io/docs).
 
- Steps to use this skeleton,
+### Top packages used to create this project :-
 
- 1. Clone the repository from github
- 2. generate `.env` file, to create environement variable and establish variables for development and production environements
+- PM2
+- Express
+- CORS
 
-    ```env
-    PORT=3000
-    # if you're using any url to display in console
-    APP_URL=http://localhost
-    ```
+### Steps to use this skeleton
 
- 3. run commands for running the app
+1. Clone the repository from github
+2. generate `.env` file, to create environement variable and establish variables for development and production environements
 
-    ```shell
-    # For running in development mode,
-    npm run dev
-    # For running in Production mode,
-    npm start
-    ```
+```env
+PORT=3000
+# if you're using any url to display in console
+APP_URL=http://localhost
+```
+
+3. run commands for running the app
+
+```shell
+# For running in development mode,
+npm run dev
+# For running in Production mode,
+npm start
+```
