@@ -8,9 +8,9 @@
 
 ### Top packages used to create this project :-
 
-- PM2
-- Express
-- CORS
+- [PM2](https://pm2.keymetrics.io/docs/usage/quick-start/)
+- [Express](https://expressjs.com/en/starter/installing.html)
+- [CORS](https://expressjs.com/en/resources/middleware/cors.html)
 
 ### Steps to use this skeleton
 
