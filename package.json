@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "express app skeleton for faster app creation",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "pm2 start ecosystem.config.js --no-daemon",
     "dev": "cross-env NODE_ENV=development nodemon index.js",
@@ -23,6 +24,7 @@
     "body-parser": "^1.20.2",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "http-error": "^0.0.6",

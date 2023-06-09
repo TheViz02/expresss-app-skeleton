@@ -1,10 +1,9 @@
-let express = require("express");
+import express from "express";
+import controllers from "../controller/index.js";
+
+const { indexController } = controllers;
 let router = express.Router();
 
-/* GET home page. */
-router.get("/", function (req, res, next) {
-  res.status(200);
-  res.json({ title: "Express" });
-});
+router.route("/").get(indexController.indexFunction);
 
-module.exports = router;
+export default router;
