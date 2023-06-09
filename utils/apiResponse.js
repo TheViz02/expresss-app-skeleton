@@ -1,30 +1,29 @@
 /**
  * Success Response for API
  * @param {string} message
+ * @param {mixed} data
  * @param {boolean} statusResponse
  * @returns {Object}
  */
-const successResponse = (message, statusResponse = true) => {
+export const successResponse = (message, data, statusResponse = true) => {
   return {
     message: message,
-    statusResponse: statusResponse,
+    data: data,
+    responseStatus: statusResponse,
   };
 };
 
 /**
  * Error Response for API
  * @param {string} message
+ * @param {mixed} data
  * @param {boolean} statusResponse
  * @returns {Object}
  */
-const errorResponse = (message, statusResponse = false) => {
+export const errorResponse = (message, data, statusResponse = false) => {
   return {
-    message: message,
-    statusResponse: statusResponse,
+    errorMessage: message,
+    data: data,
+    responseStatus: statusResponse,
   };
-};
-
-module.exports = {
-  successResponse,
-  errorResponse,
 };
