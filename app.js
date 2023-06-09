@@ -1,14 +1,16 @@
-const express = require("express");
+import express from "express";
+import cors from "cors";
+import createError from "http-errors";
+import router from "./routes/route.js";
+
 const app = express();
-const cors = require("cors");
-const createError = require("http-errors");
-let index = require("./routes/route");
+
 /**
  * JSON Request for APIs
  */
 app.use(express.json());
 
-app.use("/", index);
+app.use("/", router);
 
 /**
  * URL Encoded request for APIs
@@ -41,4 +43,4 @@ app.use(function (err, req, res, next) {
   });
 });
 
-module.exports = app;
+export default app;

@@ -4,15 +4,20 @@
  * Module dependencies.
  */
 
-let app = require("./app");
+import app from "./app.js";
 
-let debug = require("debug")("simpleapp:server");
+import debug from "debug";
 
-let http = require("http");
+import { createServer } from "http";
 
 // To Read .ENV File
-let dotenv = require("dotenv");
-dotenv.config();
+import { config } from "dotenv";
+
+// Debugging the App
+debug("simpleapp:server");
+
+// Configuration for ENV file
+config();
 
 /**
  * Get port from environment and store in Express.
@@ -25,7 +30,7 @@ app.set("port", port);
  * Create HTTP server.
  */
 
-let server = http.createServer(app);
+let server = createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
