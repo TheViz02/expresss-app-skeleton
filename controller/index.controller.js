@@ -7,5 +7,5 @@ export const indexFunction = (req, res) => {
 };
 
 export const secondFunction = (req, res) => {
-  res.status(200).send({ title: "Express" });
+  res.status(500).send(indexService.errorMessageSend());
 };
