@@ -24,7 +24,7 @@ const logger = createLogger({
 });
 
 // Logging function to log data to the file
-export class log {
+export class Logs {
   static info(data) {
     logger.info(data);
     return true;
