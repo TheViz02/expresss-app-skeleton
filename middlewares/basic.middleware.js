@@ -1,10 +1,10 @@
 "use strict";
 import { errorResponse } from "../utils/apiResponse.js";
-import { log } from "../utils/logging.js";
+import { Logs } from "../utils/logging.js";
 
 export const basicCheck = (req, res, next) => {
   let s = true;
-  log.info(s);
+  Logs.info(s);
   if (s) next();
   else res.redirect("/another");
 };
