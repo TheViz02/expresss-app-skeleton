@@ -24,6 +24,7 @@ config();
  */
 
 let port = normalizePort(process.env.PORT || 3000);
+let app_url = process.env.APP_URL;
 app.set("port", port);
 
 /**
@@ -91,7 +92,7 @@ function onError(error) {
  */
 
 function onListening() {
-  console.log(`serving at http://localhost:${port}`);
+  console.log(`serving at ${app_url}:${port}`);
 
   let addr = server.address();
   let bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
