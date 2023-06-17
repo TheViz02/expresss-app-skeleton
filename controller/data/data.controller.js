@@ -1,4 +1,4 @@
-import { services } from "../services/index.js";
+import { services } from "../../services/index.js";
 
 const { dataService } = services;
 const DataService = new dataService.DataService();
