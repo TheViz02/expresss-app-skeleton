@@ -48,3 +48,42 @@ export async function userValidate(request, response, next) {
       .json(validationResponse("Validation Error", errorMessage));
   }
 }
+
+let loginSchema = Joi.object({
+  email: Joi.string().email().required(),
+  password: Joi.string().required(),
+});
+
+export async function loginValidate(request, response, next) {
+  try {
+    let req = request.body;
+
+    const { error, value } = await loginSchema.validateAsync(
+      {
+        email: req.email,
+        password: req.password,
+      },
+      validationOptions
+    );
+
+    if (error) {
+      let errorMessage = error.details.flatMap((e) => {
+        return { field: e.path[0], message: e.message };
+      });
+
+      return response
+        .status(422)
+        .json(validationResponse("Validation Error", errorMessage));
+    }
+
+    next();
+  } catch (error) {
+    let errorMessage = error.details.flatMap((e) => {
+      return { field: e.path[0], message: e.message };
+    });
+
+    return response
+      .status(422)
+      .json(validationResponse("Validation Error", errorMessage));
+  }
+}
