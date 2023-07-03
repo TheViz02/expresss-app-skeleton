@@ -1,2 +1,12 @@
 import { PrismaClient } from "@prisma/client";
-export const prisma = new PrismaClient();
+import { Logs } from "../utils/logging.js";
+let prisma;
+
+try {
+  prisma = new PrismaClient();
+} catch (error) {
+  Logs.error(error);
+  console.error(error);
+}
+
+export default prisma;

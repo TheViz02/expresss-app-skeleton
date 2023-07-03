@@ -1,4 +1,4 @@
-import { prisma } from "../../prisma/index.js";
+import prisma from "../../prisma/index.js";
 import { errorResponse, successResponse } from "../../utils/apiResponse.js";
 export class DataService {
   constructor() {

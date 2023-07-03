@@ -3,13 +3,20 @@
  * @param {string} message
  * @param {mixed} data
  * @param {boolean} statusResponse
+ * @param {boolean} validationStatus
  * @returns {Object}
  */
-export const successResponse = (message, data, statusResponse = true) => {
+export const successResponse = (
+  message,
+  data,
+  statusResponse = true,
+  validationStatus = true
+) => {
   return {
     message: message,
     data: data,
     responseStatus: statusResponse,
+    validationStatus: validationStatus,
   };
 };
 
@@ -25,5 +32,27 @@ export const errorResponse = (message, data, statusResponse = false) => {
     errorMessage: message,
     data: data,
     responseStatus: statusResponse,
+  };
+};
+
+/**
+ * Validation response with fields error
+ * @param {string} message
+ * @param {mixed} data
+ * @param {boolean} validationStatus
+ * @param {boolean} statusResponse
+ * @returns {object}
+ */
+export const validationResponse = (
+  message,
+  data,
+  validationStatus = false,
+  statusResponse = false
+) => {
+  return {
+    message: message,
+    validationMessage: data,
+    validationStatus: validationStatus,
+    statusResponse: statusResponse,
   };
 };

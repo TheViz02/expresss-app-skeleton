@@ -3,6 +3,7 @@ import cors from "cors";
 import createError from "http-errors";
 import router from "./routes/route.js";
 import { errorHandling } from "./middlewares/basic.middleware.js";
+import authRouter from "./routes/auth.js";
 
 const app = express();
 
@@ -12,6 +13,7 @@ const app = express();
 app.use(express.json());
 
 app.use("/", router);
+app.use("/auth", authRouter);
 
 /**
  * URL Encoded request for APIs
