@@ -46,7 +46,7 @@ export class LoginService {
             return {
                 statusCode: 400,
                 data: validationResponse("Incorrect Password", [
-                    { fields: "email", message: "Password Entered is incorrect" },
+                    { fields: "password", message: "Password Entered is incorrect" },
                 ]),
             };
         }

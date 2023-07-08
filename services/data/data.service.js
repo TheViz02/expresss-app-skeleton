@@ -14,10 +14,14 @@ export class DataService {
     return true;
   }
 
-  async getData() {
+  async getData(user) {
     return successResponse(
       "Data Fetched Successfully!!",
-      await prisma.data.findMany()
+      await prisma.data.findMany({
+        where: {
+          userId: user.id
+        }
+      })
     );
   }
 
