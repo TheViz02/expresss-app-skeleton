@@ -8,6 +8,7 @@
 - This project has logging support using [winston](https://github.com/winstonjs/winston).
 - This application creates scaffolding for the Express Applicaiton with authentication, Model, Controller, services, & database access using [Prisma](https://www.prisma.io/docs).
 - This Application supports MySQL by default, but you can configure it with various database tools like Mongo DB, PostgreSQL, or various database tools available in [Prisma](https://www.prisma.io/docs).
+- This Application is using JWT for authentication using [JsonWebToken](https://www.npmjs.com/package/jsonwebtoken) package, and Generating password using [bcrypt](https://www.npmjs.com/package/bcrypt).
 
 ### Top packages used to create this project :-
 
@@ -16,6 +17,8 @@
 - [CORS](https://expressjs.com/en/resources/middleware/cors.html)
 - [Prisma](https://www.prisma.io/docs)
 - [Winston](https://github.com/winstonjs/winston)
+- [JsonWebToken](https://www.npmjs.com/package/jsonwebtoken)
+- [bcrypt](https://www.npmjs.com/package/bcrypt)
 
 ### Steps to use this skeleton
 

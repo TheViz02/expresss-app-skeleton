@@ -8,6 +8,11 @@
     "start": "pm2 start ecosystem.config.js --no-daemon",
     "dev": "cross-env NODE_ENV=development nodemon index.js",
     "seed": "node ./prisma/seeder.js",
+    "prisma:migrate": "npx prisma migrate dev",
+    "prisma:generate": "npx prisma generate",
+    "prisma:pull-schema": "npx prisma db pull",
+    "prisma:push-schema": "npx prisma db push",
+    "prisma:studio": "npx prisma studio",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,8 +26,8 @@
   },
   "homepage": "https://github.com/TheViz02/expresss-app-skeleton#readme",
   "dependencies": {
-    "@prisma/client": "^4.15.0",
-    "bcrypt": "^5.1.0",
+    "@prisma/client": "^4.16.2",
+    "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.2",
     "cookie-parser": "^1.4.6",
@@ -34,10 +39,10 @@
     "joi": "^17.9.2",
     "jsonwebtoken": "^9.0.0",
     "multer": "^1.4.5-lts.1",
-    "pm2": "^5.3.0",
+    "pm2": "^2.10.4",
     "winston": "^3.9.0"
   },
   "devDependencies": {
-    "prisma": "^4.15.0"
+    "prisma": "^4.16.2"
   }
 }

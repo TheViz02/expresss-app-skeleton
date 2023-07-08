@@ -4,7 +4,7 @@ const { dataService } = services;
 const DataService = new dataService.DataService();
 
 export const getData = (req, res) => {
-  DataService.getData().then((result) => {
+  DataService.getData(req.userDetails).then((result) => {
     res.status(200).send(result);
   });
 };

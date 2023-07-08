@@ -12,11 +12,13 @@ datasource db {
 
 model data {
   id          Int      @id @default(autoincrement())
+  userId      Int? // Key for Foreign ID
   name        String?
   email       String?
   phoneNumber String?
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+  user        User?    @relation(fields: [userId], references: [id]) // Relation with User ID
 }
 
 model User {
@@ -26,4 +28,5 @@ model User {
   password  String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  data      data[]
 }
