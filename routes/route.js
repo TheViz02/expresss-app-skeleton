@@ -23,8 +23,8 @@ router
 
 router
   .route("/data/:id")
-  .get(dataController.getSelectedData)
-  .put(dataController.updateData)
-  .delete(dataController.deleteData);
+  .get(authMiddleware.AuthenticateUser, dataController.getSelectedData)
+  .put(authMiddleware.AuthenticateUser, dataController.updateData)
+  .delete(authMiddleware.AuthenticateUser, dataController.deleteData);
 
 export default router;
