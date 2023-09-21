@@ -11,7 +11,7 @@ export const AuthenticateUser = (req, res, next) => {
 
     validateTokenInvalid(token)
         .then((check) => {
-            if (check.token)
+            if (check?.token === null || check?.token)
                 return res.status(419).send(errorResponse("Invalid Token", {}))
 
             try {
