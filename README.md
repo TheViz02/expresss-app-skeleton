@@ -1,4 +1,4 @@
-# Project By Yash (Express Skeleton App)
+# Project By Bhupendra Madhu (Express Skeleton App)
 
 ## expresss-app-skeleton
 
