@@ -21,20 +21,19 @@ export const AuthenticateUser = (req, res, next) => {
                     return res.status(419).send(errorResponse("Token Expired", {}));
                 }
 
-
                 req.userDetails = verify;
 
                 next();
             } catch (error) {
                 res.status(500).send(errorResponse(
-                    "Invalid Token Occure",
+                    "Invalid Token",
                     error.stack.split("\n").map((item) => item.trim())
                 ));
             }
 
         }).catch((error) => {
             res.status(500).send(errorResponse(
-                "Invalid Token Occure",
+                "Invalid Token",
                 error.stack.split("\n").map((item) => item.trim())
             ));
         });
