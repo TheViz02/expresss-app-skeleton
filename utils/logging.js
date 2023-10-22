@@ -15,7 +15,8 @@ const logger = createLogger({
     format.timestamp({ format: "YYYY-MM-DD HH:mm:ss" }),
     format.printf(({ timestamp, level, message }) => {
       return `${timestamp} ${level}: ${message}`;
-    })
+    }),
+    format.prettyPrint(),
   ),
   transports: [
     new transports.File({ filename: getLogFileName(), dirname: logDirectory }),
