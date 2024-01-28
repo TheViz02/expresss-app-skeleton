@@ -9,6 +9,7 @@
 - This application creates scaffolding for the Express Applicaiton with authentication, Model, Controller, services, & database access using [Prisma](https://www.prisma.io/docs).
 - This Application supports MySQL by default, but you can configure it with various database tools like Mongo DB, PostgreSQL, or various database tools available in [Prisma](https://www.prisma.io/docs).
 - This Application is using JWT for authentication using [JsonWebToken](https://www.npmjs.com/package/jsonwebtoken) package, and Generating password using [bcrypt](https://www.npmjs.com/package/bcrypt).
+- This project also consists option to execute cron jobs using core code in javascript and saving command in package.json, and calling it from the server where the cron call is set
 
 ### Top packages used to create this project :-
 
