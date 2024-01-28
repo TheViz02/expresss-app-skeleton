@@ -13,6 +13,7 @@
     "prisma:pull-schema": "npx prisma db pull",
     "prisma:push-schema": "npx prisma db push",
     "prisma:studio": "npx prisma studio",
+    "flush-revoked-tokens": "node ./jobs/revokeTokenClear.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

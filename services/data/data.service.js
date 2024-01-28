@@ -15,13 +15,21 @@ export class DataService {
   }
 
   async getData(user) {
+    var data = await prisma.data.findMany({
+      where: {
+        userId: user.id
+      }
+    });
+
+    var iterated = data.map((item, key) => {
+      item.createdAt = new Date(item.createdAt).toDateString();
+      item.updatedAt = new Date(item.updatedAt).toDateString();
+      return item;
+    });
+
     return successResponse(
       "Data Fetched Successfully!!",
-      await prisma.data.findMany({
-        where: {
-          userId: user.id
-        }
-      })
+      data
     );
   }
 

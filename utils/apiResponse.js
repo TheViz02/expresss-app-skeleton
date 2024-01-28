@@ -27,11 +27,12 @@ export const successResponse = (
  * @param {boolean} statusResponse
  * @returns {Object}
  */
-export const errorResponse = (message, data, statusResponse = false) => {
+export const errorResponse = (message, data, statusResponse = false, validationStatus = false) => {
   return {
     errorMessage: message,
     data: data,
     responseStatus: statusResponse,
+    validationStatus: validationStatus,
   };
 };
 
