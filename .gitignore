@@ -130,4 +130,7 @@ dist
 images/*
 public/*
 
+# IDE Folders
 .idea/*
+.vscode/*
+.vs/*
