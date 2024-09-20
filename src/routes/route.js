@@ -11,20 +11,20 @@ router.use(basicMiddleware.errorHandling);
 // router.use(AuthenticateUser);
 // console.log(AuthenticateUser);
 router
-  .route("/")
-  .get(basicMiddleware.basicCheck, indexController.indexFunction);
+    .route("/")
+    .get(basicMiddleware.basicCheck, indexController.indexFunction);
 
 router.route("/another").get(indexController.secondFunction);
 
 router
-  .route("/data")
-  .get(authMiddleware.AuthenticateUser, dataController.getData)
-  .post(authMiddleware.AuthenticateUser, dataController.saveData);
+    .route("/data")
+    .get(authMiddleware.AuthenticateUser, dataController.getData)
+    .post(authMiddleware.AuthenticateUser, dataController.saveData);
 
 router
-  .route("/data/:id")
-  .get(authMiddleware.AuthenticateUser, dataController.getSelectedData)
-  .put(authMiddleware.AuthenticateUser, dataController.updateData)
-  .delete(authMiddleware.AuthenticateUser, dataController.deleteData);
+    .route("/data/:id")
+    .get(authMiddleware.AuthenticateUser, dataController.getSelectedData)
+    .put(authMiddleware.AuthenticateUser, dataController.updateData)
+    .delete(authMiddleware.AuthenticateUser, dataController.deleteData);
 
 export default router;

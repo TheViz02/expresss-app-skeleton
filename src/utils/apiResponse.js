@@ -7,17 +7,17 @@
  * @returns {Object}
  */
 export const successResponse = (
-  message,
-  data,
-  statusResponse = true,
-  validationStatus = true
+    message,
+    data,
+    statusResponse = true,
+    validationStatus = true
 ) => {
-  return {
-    message: message,
-    data: data,
-    responseStatus: statusResponse,
-    validationStatus: validationStatus,
-  };
+    return {
+        message: message,
+        data: data,
+        responseStatus: statusResponse,
+        validationStatus: validationStatus,
+    };
 };
 
 /**
@@ -28,12 +28,12 @@ export const successResponse = (
  * @returns {Object}
  */
 export const errorResponse = (message, data, statusResponse = false, validationStatus = false) => {
-  return {
-    errorMessage: message,
-    data: data,
-    responseStatus: statusResponse,
-    validationStatus: validationStatus,
-  };
+    return {
+        errorMessage: message,
+        data: data,
+        responseStatus: statusResponse,
+        validationStatus: validationStatus,
+    };
 };
 
 /**
@@ -45,15 +45,15 @@ export const errorResponse = (message, data, statusResponse = false, validationS
  * @returns {object}
  */
 export const validationResponse = (
-  message,
-  data,
-  validationStatus = false,
-  statusResponse = false
+    message,
+    data,
+    validationStatus = false,
+    statusResponse = false
 ) => {
-  return {
-    message: message,
-    validationMessage: data,
-    validationStatus: validationStatus,
-    statusResponse: statusResponse,
-  };
+    return {
+        message: message,
+        validationMessage: data,
+        validationStatus: validationStatus,
+        statusResponse: statusResponse,
+    };
 };

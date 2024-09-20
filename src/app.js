@@ -30,7 +30,7 @@ app.options("*", cors());
  * If Any Endpoint not found
  */
 app.use(function (req, res, next) {
-  next(createError(404));
+    next(createError(404));
 });
 
 app.use(errorHandling);
