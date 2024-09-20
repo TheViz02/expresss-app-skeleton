@@ -2,37 +2,37 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client-js"
+    provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+    provider = "mysql"
+    url      = env("DATABASE_URL")
 }
 
 model data {
-  id          Int      @id @default(autoincrement())
-  userId      Int? // Key for Foreign ID
-  name        String?
-  email       String?
-  phoneNumber String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  user        User?    @relation(fields: [userId], references: [id]) // Relation with User ID
+    id          Int      @id @default(autoincrement())
+    userId      Int? // Key for Foreign ID
+    name        String?
+    email       String?
+    phoneNumber String?
+    createdAt   DateTime @default(now())
+    updatedAt   DateTime @updatedAt
+    user        User?    @relation(fields: [userId], references: [id]) // Relation with User ID
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  userName  String
-  email     String   @unique
-  password  String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  data      data[]
+    id        Int      @id @default(autoincrement())
+    userName  String
+    email     String   @unique
+    password  String
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    data      data[]
 }
 
 model RevokedToken {
-  id        Int       @id @default(autoincrement())
-  token     String?
-  createdAt DateTime? @default(now())
+    id        Int       @id @default(autoincrement())
+    token     String?
+    createdAt DateTime? @default(now())
 }
