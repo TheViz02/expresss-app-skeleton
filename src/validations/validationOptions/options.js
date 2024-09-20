@@ -1,3 +1,3 @@
 export const validationOptions = {
-  abortEarly: false,
+    abortEarly: false,
 };

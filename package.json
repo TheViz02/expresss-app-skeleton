@@ -1,49 +1,49 @@
 {
-  "name": "expresss-app-skeleton",
-  "version": "1.0.0",
-  "description": "express app skeleton for faster app creation",
-  "main": "index.js",
-  "type": "module",
-  "scripts": {
-    "start": "pm2 start ecosystem.config.js --no-daemon",
-    "dev": "cross-env NODE_ENV=development nodemon index.js",
-    "seed": "node ./prisma/seeder.js",
-    "prisma:migrate": "npx prisma migrate dev",
-    "prisma:generate": "npx prisma generate",
-    "prisma:pull-schema": "npx prisma db pull",
-    "prisma:push-schema": "npx prisma db push",
-    "prisma:studio": "npx prisma studio",
-    "flush-revoked-tokens": "node ./jobs/revokeTokenClear.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TheViz02/expresss-app-skeleton.git"
-  },
-  "author": "Yash Maadhu",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/TheViz02/expresss-app-skeleton/issues"
-  },
-  "homepage": "https://github.com/TheViz02/expresss-app-skeleton#readme",
-  "dependencies": {
-    "@prisma/client": "^4.16.2",
-    "bcrypt": "^5.0.1",
-    "bcryptjs": "^2.4.3",
-    "body-parser": "^1.20.2",
-    "cookie-parser": "^1.4.6",
-    "cors": "^2.8.5",
-    "cross-env": "^7.0.3",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "http-error": "^0.0.6",
-    "joi": "^17.9.2",
-    "jsonwebtoken": "^9.0.0",
-    "multer": "^1.4.5-lts.1",
-    "pm2": "^5.3.1",
-    "winston": "^3.9.0"
-  },
-  "devDependencies": {
-    "prisma": "^4.16.2"
-  }
+    "name": "expresss-app-skeleton",
+    "version": "1.0.0",
+    "description": "express app skeleton for faster app creation",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "start": "pm2 start ecosystem.config.js --no-daemon",
+        "dev": "cross-env NODE_ENV=development nodemon index.js",
+        "seed": "node ./prisma/seeder.js",
+        "prisma:migrate": "npx prisma migrate dev",
+        "prisma:generate": "npx prisma generate",
+        "prisma:pull-schema": "npx prisma db pull",
+        "prisma:push-schema": "npx prisma db push",
+        "prisma:studio": "npx prisma studio",
+        "flush-revoked-tokens": "node ./jobs/revokeTokenClear.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/TheViz02/expresss-app-skeleton.git"
+    },
+    "author": "Yash Maadhu",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/TheViz02/expresss-app-skeleton/issues"
+    },
+    "homepage": "https://github.com/TheViz02/expresss-app-skeleton#readme",
+    "dependencies": {
+        "@prisma/client": "^4.16.2",
+        "bcrypt": "^5.0.1",
+        "bcryptjs": "^2.4.3",
+        "body-parser": "^1.20.2",
+        "cookie-parser": "^1.4.6",
+        "cors": "^2.8.5",
+        "cross-env": "^7.0.3",
+        "dotenv": "^16.0.3",
+        "express": "^4.18.2",
+        "http-error": "^0.0.6",
+        "joi": "^17.9.2",
+        "jsonwebtoken": "^9.0.0",
+        "multer": "^1.4.5-lts.1",
+        "pm2": "^5.3.1",
+        "winston": "^3.9.0"
+    },
+    "devDependencies": {
+        "prisma": "^4.16.2"
+    }
 }

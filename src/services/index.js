@@ -5,9 +5,9 @@ import * as indexService from "./index.service.js";
 import * as dataService from "./data/data.service.js";
 
 export const services = {
-  loginService,
-  registerService,
-  indexService,
-  dataService,
-  logoutService
+    loginService,
+    registerService,
+    indexService,
+    dataService,
+    logoutService
 };
