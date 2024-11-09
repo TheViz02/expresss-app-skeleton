@@ -13,10 +13,10 @@ export const successResponse = (
     validationStatus = true
 ) => {
     return {
-        message: message,
-        data: data,
-        responseStatus: statusResponse,
+        status: statusResponse,
         validationStatus: validationStatus,
+        data: data,
+        message: message,
     };
 };
 
@@ -29,10 +29,10 @@ export const successResponse = (
  */
 export const errorResponse = (message, data, statusResponse = false, validationStatus = false) => {
     return {
-        errorMessage: message,
-        data: data,
-        responseStatus: statusResponse,
+        status: statusResponse,
         validationStatus: validationStatus,
+        data: data,
+        errorMessage: message,
     };
 };
 
@@ -51,9 +51,9 @@ export const validationResponse = (
     statusResponse = false
 ) => {
     return {
+        status: statusResponse,
+        validationStatus: validationStatus,
         message: message,
         validationMessage: data,
-        validationStatus: validationStatus,
-        statusResponse: statusResponse,
     };
 };

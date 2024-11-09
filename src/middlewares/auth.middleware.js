@@ -1,11 +1,11 @@
-import prisma from "../prisma/index.js";
+import { prisma, revokedToken } from "../../prisma/index.js";
 import { errorResponse } from "../utils/apiResponse.js";
 import jwt from "jsonwebtoken";
 
 const JWT = jwt;
 
 export const AuthenticateUser = (req, res, next) => {
-    let token = req.header('auth-token');
+    let token = req.header('Authorization').split(' ')[1] ?? '';
 
     if (!token) return res.status(419).send(errorResponse("Token Not Found", {}));
 
@@ -25,14 +25,14 @@ export const AuthenticateUser = (req, res, next) => {
 
                 next();
             } catch (error) {
-                res.status(500).send(errorResponse(
+                res.status(419).send(errorResponse(
                     "Invalid Token",
                     error.stack.split("\n").map((item) => item.trim())
                 ));
             }
 
         }).catch((error) => {
-            res.status(500).send(errorResponse(
+            res.status(419).send(errorResponse(
                 "Invalid Token",
                 error.stack.split("\n").map((item) => item.trim())
             ));
@@ -45,11 +45,11 @@ function validateTokenExpiration(time) {
         tokenValidityInSeconds = 3600,
         tokenAgeInSeconds = currentTimestamp - time;
 
-    return (tokenAgeInSeconds > tokenValidityInSeconds) ? false : true;
+    return (tokenAgeInSeconds < tokenValidityInSeconds);
 }
 
 async function validateTokenInvalid(token) {
-    return await prisma.RevokedToken.findFirst({
+    return await revokedToken.findFirst({
         where: {
             token: token
         }

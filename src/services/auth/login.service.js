@@ -1,6 +1,6 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import prisma from "../../prisma/index.js";
+import { prisma, user } from '../../../prisma/index.js';
 import {
     errorResponse,
     successResponse,
@@ -22,7 +22,7 @@ export class LoginService {
     }
 
     async userLogin(data) {
-        let checkUserExist = await prisma.User.findUnique({
+        let checkUserExist = await user.findUnique({
             where: {
                 email: data.email,
             },
