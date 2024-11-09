@@ -1,4 +1,5 @@
-import prisma from "../../prisma/index.js";
+// import prisma from "../../../prisma/index.js";
+import { prisma } from "../../../prisma/index.js";
 import bcrypt from "bcrypt";
 import {
     errorResponse,
@@ -21,7 +22,7 @@ export class RegisterService {
     }
     async userRegister(data) {
         try {
-            let emailExists = await prisma.User.findUnique({
+            let emailExists = await user.findUnique({
                 where: { email: data.email },
             });
 
@@ -35,6 +36,7 @@ export class RegisterService {
 
                 return emailValidate;
             }
+
             let salt = await bcrypt.genSalt(10);
             let hashedPassword = await bcrypt.hash(data.password, salt);
 

@@ -1,4 +1,5 @@
-import prisma from "../../prisma/index.js";
+// import prisma from "../../../prisma/index.js";
+import { prisma, data } from "../../../prisma/index.js";
 import { errorResponse, successResponse } from "../../utils/apiResponse.js";
 export class DataService {
     constructor() {
@@ -15,27 +16,21 @@ export class DataService {
     }
 
     async getData(user) {
-        var data = await prisma.data.findMany({
+        var result = await data.findMany({
             where: {
                 userId: user.id
             }
         });
 
-        var iterated = data.map((item, key) => {
-            item.createdAt = new Date(item.createdAt).toDateString();
-            item.updatedAt = new Date(item.updatedAt).toDateString();
-            return item;
-        });
-
         return successResponse(
             "Data Fetched Successfully!!",
-            data
+            result
         );
     }
 
     async saveData(req) {
         try {
-            return await prisma.data
+            return await data
                 .create({
                     data: {
                         name: req.name,
@@ -53,7 +48,7 @@ export class DataService {
 
     async updateData(data) {
         try {
-            return await prisma.data
+            return await data
                 .update({
                     where: { id: data.id },
                     data: {
@@ -75,7 +70,7 @@ export class DataService {
 
     async deleteData(id) {
         try {
-            return await prisma.data
+            return await data
                 .delete({
                     where: {
                         id: id,
@@ -94,7 +89,7 @@ export class DataService {
 
     async getSelectedData(data) {
         try {
-            return await prisma.data
+            return await data
                 .findUnique({
                     where: {
                         id: data.id,

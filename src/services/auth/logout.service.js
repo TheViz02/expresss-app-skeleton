@@ -1,4 +1,5 @@
-import prisma from "../../prisma/index.js";
+// import prisma from "../../../prisma/index.js";
+import { prisma, revokedToken } from "../../../prisma/index.js";
 import {
     successResponse,
 } from "../../utils/apiResponse.js";
@@ -16,7 +17,7 @@ export class LogoutService {
     async logOutUser(data) {
         let token = data.header('auth-token');
 
-        return await prisma.RevokedToken.create({
+        return await revokedToken.create({
             data: {
                 token: token
             }

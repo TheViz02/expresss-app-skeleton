@@ -4,7 +4,7 @@ const { registerService, loginService, logoutService } = services;
 
 const RegisterService = new registerService.RegisterService();
 const LoginService = new loginService.LoginService();
-const LogoutService = new logoutService.LogoutService()
+const LogoutService = new logoutService.LogoutService();
 
 export const registerUser = (req, res) => {
     RegisterService.userRegister(req.body).then((result) => {

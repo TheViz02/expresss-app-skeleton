@@ -1,12 +1,12 @@
 import { PrismaClient } from "@prisma/client";
-import { Logs } from "../utils/logging.js";
-let prisma;
 
-try {
-    prisma = new PrismaClient();
-} catch (error) {
-    Logs.error(error);
-    console.error(error);
-}
+// const prisma = new PrismaClient();
 
-export default prisma;
+const prismaClient = new PrismaClient();
+
+export const prisma = prismaClient;
+
+// Assing models Here!!
+export const user = prismaClient.user;
+export const data = prismaClient.data;
+export const revokedToken = prismaClient.revokedToken;
